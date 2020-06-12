@@ -14,7 +14,7 @@ public:
 	string courierid;
 	int weight;
 	void addorder(string orderfile);
-	void osearchid(string orderfile); // поиск по id
+	void osearchid(string orderfile); // РїРѕРёСЃРє РїРѕ id
 };
 
 class Courier {
@@ -22,13 +22,13 @@ public:
 	string idc;
 	string name;
 	string phone;
-	string orderid1; // текущий заказ
-	string orderid2; // будущий заказ
+	string orderid1; // С‚РµРєСѓС‰РёР№ Р·Р°РєР°Р·
+	string orderid2; // Р±СѓРґСѓС‰РёР№ Р·Р°РєР°Р·
 	int car;
 	int deliverytime;
 	void addcourier(string courierfile);
-	void courierdeleting(string courierfile); // Удаление по id
-	void csearchname(string courierfile); // поиск по имени 
-	void csearchphone(string courierfile); // поиск по телефону
-	void allcourierclear(string courierfile); //Очистить файл с данными
+	void courierdeleting(string courierfile); // РЈРґР°Р»РµРЅРёРµ РїРѕ id
+	void csearchname(string courierfile); // РїРѕРёСЃРє РїРѕ РёРјРµРЅРё
+	void csearchphone(string courierfile); // РїРѕРёСЃРє РїРѕ С‚РµР»РµС„РѕРЅСѓ
+	void allcourierclear(string courierfile); // РћС‡РёСЃС‚РёС‚СЊ С„Р°Р№Р» СЃ РґР°РЅРЅС‹РјРё
 	};
