@@ -33,7 +33,7 @@ void csearchphone(string courierfile){//Удаление элементов
 		} 
 	}
 	if (tmp==-1){
-		cout<<"There's no such phone"<<endl;
+		cout <<"There's no such phone"<<endl;
 	}	
 	fout.close();
 	delete[]a;
@@ -41,7 +41,7 @@ void csearchphone(string courierfile){//Удаление элементов
 
 void allcourierclear(string courierfile){//Очистить файл с данными
 	ofstream f;
-	f.open(courierfile, ios::out);//EZ
+	f.open(courierfile, ios::out);
 	f.close();
-}-
+}
 
