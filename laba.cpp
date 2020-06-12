@@ -1,5 +1,5 @@
 void addcourier(string courierfile)
-{//Добавление курьеров
+{//Р”РѕР±Р°РІР»РµРЅРёРµ РєСѓСЂСЊРµСЂРѕРІ
 	ifstream fin;
 	ofstream fout;
 	fin.open(courierfile);
@@ -7,14 +7,14 @@ void addcourier(string courierfile)
 	int k = 0;
 	string s;
 	cout << "Enter the courier you want to put('name /n phone /n idc /n car(0 or 1)')" << endl;
-	while (!fin.eof()) {//Считаем количество строк в тексте=количество видов объектов
+	while (!fin.eof()) {//РЎС‡РёС‚Р°РµРј РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РІ С‚РµРєСЃС‚Рµ=РєРѕР»РёС‡РµСЃС‚РІРѕ РІРёРґРѕРІ РѕР±СЉРµРєС‚РѕРІ
 		getline(fin, s);
 		k++;
 	}
 	k--;
-	Courier* a = new Courier[k + 1];//Выделяем память на массив типа  struct(с запасом)
-	//fin.seekg( 0 );//Не забываем вернуть курсор в начало
-	fin.close();//Убираем за собой
+	Courier* a = new Courier[k + 1];//Р’С‹РґРµР»СЏРµРј РїР°РјСЏС‚СЊ РЅР° РјР°СЃСЃРёРІ С‚РёРїР°  struct(СЃ Р·Р°РїР°СЃРѕРј)
+	//fin.seekg( 0 );//РќРµ Р·Р°Р±С‹РІР°РµРј РІРµСЂРЅСѓС‚СЊ РєСѓСЂСЃРѕСЂ РІ РЅР°С‡Р°Р»Рѕ
+	fin.close();//РЈР±РёСЂР°РµРј Р·Р° СЃРѕР±РѕР№
 	fin.open(courierfile);
 	for (i = 0; i < k; i++) {
 		fin >> a[i].idc;
@@ -24,7 +24,7 @@ void addcourier(string courierfile)
 		fin >> a[i].orderid2;
 		fin >> a[i].car;
 		fin >> a[i].deliverytime;
-		//Считываем элементы из файла, заодно выводим на экран все текущие элементы
+		//РЎС‡РёС‚С‹РІР°РµРј СЌР»РµРјРµРЅС‚С‹ РёР· С„Р°Р№Р»Р°, Р·Р°РѕРґРЅРѕ РІС‹РІРѕРґРёРј РЅР° СЌРєСЂР°РЅ РІСЃРµ С‚РµРєСѓС‰РёРµ СЌР»РµРјРµРЅС‚С‹
 	}
 	int j;
 	string name;
@@ -33,34 +33,34 @@ void addcourier(string courierfile)
 	int car;
 	cin >> name >> phone >> idc >> car;
 	for (i = 0; i < k; i++) {
-		if (a[i].idc == idc) {//Сравниваем параметры 
+		if (a[i].idc == idc) {//РЎСЂР°РІРЅРёРІР°РµРј РїР°СЂР°РјРµС‚СЂС‹ 
 			cout << "courier with same id already exists. Try the other one" << endl;
 			fin.close();
 			exit(0);
 		}
-		if (a[i].name == name) {//Сравниваем параметры 
+		if (a[i].name == name) {//РЎСЂР°РІРЅРёРІР°РµРј РїР°СЂР°РјРµС‚СЂС‹ 
 			cout << "courier with same name already exists. Try the other one" << endl;
 			fin.close();
 			exit(0);
 		}
-		if (a[i].phone == phone) {//Сравниваем параметры 
+		if (a[i].phone == phone) {//РЎСЂР°РІРЅРёРІР°РµРј РїР°СЂР°РјРµС‚СЂС‹ 
 			cout << "courier with same phone already exists. Try the other one" << endl;
 			fin.close();
 			exit(0);
 		}
 	}
-	fin.close();//Готовимся полностью очистить файл
+	fin.close();//Р“РѕС‚РѕРІРёРјСЃСЏ РїРѕР»РЅРѕСЃС‚СЊСЋ РѕС‡РёСЃС‚РёС‚СЊ С„Р°Р№Р»
 	a[k].idc = idc;
 	a[k].name = name;
 	a[k].phone = phone;
 	a[k].car = car;
-	a[k].deliverytime = 30 - 20 * car; // время доставки для одного курьера, 10 мин. с машиной, 30 мин. без машины, так как car принимает значение 1, если есть машина, 0 - если нет
+	a[k].deliverytime = 30 - 20 * car; // РІСЂРµРјСЏ РґРѕСЃС‚Р°РІРєРё РґР»СЏ РѕРґРЅРѕРіРѕ РєСѓСЂСЊРµСЂР°, 10 РјРёРЅ. СЃ РјР°С€РёРЅРѕР№, 30 РјРёРЅ. Р±РµР· РјР°С€РёРЅС‹, С‚Р°Рє РєР°Рє car РїСЂРёРЅРёРјР°РµС‚ Р·РЅР°С‡РµРЅРёРµ 1, РµСЃР»Рё РµСЃС‚СЊ РјР°С€РёРЅР°, 0 - РµСЃР»Рё РЅРµС‚
 	a[k].orderid1 = "0";
 	a[k].orderid2 = "0";
-	fout.open(courierfile, ios::out);//Мы снова в файле, но он теперь пустой
-	for (i = 0; i < k + 1; i++) {//Переписываем весь дополненный массив в документ
+	fout.open(courierfile, ios::out);//РњС‹ СЃРЅРѕРІР° РІ С„Р°Р№Р»Рµ, РЅРѕ РѕРЅ С‚РµРїРµСЂСЊ РїСѓСЃС‚РѕР№
+	for (i = 0; i < k + 1; i++) {//РџРµСЂРµРїРёСЃС‹РІР°РµРј РІРµСЃСЊ РґРѕРїРѕР»РЅРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ РІ РґРѕРєСѓРјРµРЅС‚
 		fout << a[i].idc << " " << a[i].name << " " << a[i].phone << " " << a[i].orderid1 << " "a[i].orderid2 << " " << a[i].car << " " << a[i].deliverytime << endl;
 	}
-	fout.close();//Убираем за собой
-	delete[] a;//Убираем за собойх2
+	fout.close();//РЈР±РёСЂР°РµРј Р·Р° СЃРѕР±РѕР№
+	delete[] a;//РЈР±РёСЂР°РµРј Р·Р° СЃРѕР±РѕР№С…2
 }
