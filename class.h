@@ -33,6 +33,6 @@ public:
 	void csearchname(string courierfile); // поиск по имени 
 	void allcourierclear(string courierfile); //Очистить файл с данными
 	void csearchid(string courierfile); // поиск по id
-	void allcourierwrite(string courierfile);
+	void allcourierwrite(string courierfile); //Вывести все элементы на экран
 	void oselect(string courierfile, string orderfile);
 };
