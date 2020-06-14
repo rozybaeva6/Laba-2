@@ -1,3 +1,11 @@
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "classes.h"
+
+using namespace std;
+
 void addcourier (string courierfile)
 {//Добавление курьеров
 	ifstream fin;
@@ -32,16 +40,26 @@ void addcourier (string courierfile)
 	int idc;
 	int car;		
 	cin >> name >> phone >> car; 
-	for (i=0; i<k; i++){
-		if (a[i].name== name){//Сравниваем параметры 
-			cout <<"courier with same name already exists. Try the other one"<<endl;
-			fin.close();
-			exit(0);	
-		}
-		if (a[i].phone== phone){//Сравниваем параметры 
-			cout <<"courier with same phone already exists. Try the other one"<<endl;
-			fin.close();
-			exit(0);	
+	idc=k+1;
+	int f=0;
+	while(f==0){
+		f=1;
+		for (i=0; i<k; i++){
+			if (a[i].idc== idc){ 
+				f=0;
+				idc=idc+1;
+				fin.close();	
+			}
+			if (a[i].name== name){ // сравниваем параметры
+				cout <<"courier with same name already exists. Try the other one"<<endl;
+				fin.close();
+				exit(0);	
+			}
+			if (a[i].phone== phone){ // сравниваем параметры
+				cout <<"courier with same phone already exists. Try the other one"<<endl;
+				fin.close();
+				exit(0);	
+			}
 		}
 	}
 	fin.close();//Готовимся полностью очистить файл
@@ -49,9 +67,9 @@ void addcourier (string courierfile)
 	a[k].name=name;
 	a[k].phone=phone;
 	a[k].car=car;
-	a[k].deliverytime=30-20*car; // время доставки для одного курьера, 10 мин. с машиной, 30 мин. без машины, так как car принимает значение 1, если есть машина, 0 - если нет
-	a[k].orderid1= 0;
-	a[k].orderid2= 0;
+	a[k].deliverytime=0;
+	a[k].orderid1=0;
+	a[k].orderid2=0;
 	fout.open(courierfile, ios::out);//Мы снова в файле, но он теперь пустой
 	for (i=0; i<k+1; i++){//Переписываем весь дополненный массив в документ
 		fout << a[i].idc <<" "<<a[i].name<<" "<<a[i].phone<<" "<<a[i].orderid1<<" "a[i].orderid2<<" "<<a[i].car<<" "<<a[i].deliverytime<<endl;
