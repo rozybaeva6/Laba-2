@@ -42,3 +42,17 @@ public:
 	void runtime(string courierfile, string orderfile);
 	void allcourierclear(string courierfile, string orderfile);
 };
+
+void allorderclear(string orderfile);
+void allorderclear(string courierfile, string orderfile);
+void allcourierwrite(string courierfile);
+void allcourierclear(string courierfile, string orderfile);
+void courierdeleting(string courierfile, string orderfile);
+void oselect(string courierfile, string orderfile);
+void addorder (string orderfile);
+void osearchid(string orderfile);
+void runtime(string courierfile, string orderfile);
+void csearchid(string courierfile);
+void csearchname(string courierfile);
+void csearchphone(string courierfile);
+void addcourier(string courierfile);
