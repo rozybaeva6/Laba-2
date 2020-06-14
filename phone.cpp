@@ -1,3 +1,11 @@
+#include <cstdlib>
+#include <iostream>
+#include <fstream>
+#include <string>
+#include "classes.h"
+
+using namespace std;
+
 void csearchphone(string courierfile){//Удаление элементов
 	ifstream fin;
 	ofstream fout;	
