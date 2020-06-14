@@ -41,7 +41,6 @@ public:
 	void allcourierclear(string courierfile, string orderfile); //Очистить файл с данными
 };
 
-void allorderclear(string orderfile);
 void allorderclear(string courierfile, string orderfile);
 void allcourierwrite(string courierfile);
 void allcourierclear(string courierfile, string orderfile);
