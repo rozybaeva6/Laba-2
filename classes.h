@@ -31,16 +31,14 @@ public:
 	int orderid2; // будущий заказ
 	int car; 
 	int deliverytime;
-	
 	void addcourier (string courierfile);
 	void courierdeleting(string courierfile, string orderfile); // Удаление по id
 	void csearchname(string courierfile); // поиск по имени 
-	void allcourierclear(string courierfile); //Очистить файл с данными
 	void csearchid(string courierfile); // поиск по id
 	void allcourierwrite(string courierfile); //Вывести все элементы на экран
 	void oselect(string courierfile, string orderfile);
 	void runtime(string courierfile, string orderfile);
-	void allcourierclear(string courierfile, string orderfile);
+	void allcourierclear(string courierfile, string orderfile); //Очистить файл с данными
 };
 
 void allorderclear(string orderfile);
