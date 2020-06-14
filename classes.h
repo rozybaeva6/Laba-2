@@ -51,4 +51,4 @@ void runtime(string courierfile, string orderfile);
 void csearchid(string courierfile);
 void csearchname(string courierfile);
 void csearchphone(string courierfile);
-void addcourier(strng courierfile);
+void addcourier(string courierfile);
